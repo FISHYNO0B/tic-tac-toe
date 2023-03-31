@@ -1,0 +1,45 @@
+.box-container {
+    max-width: 660px;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+.box {
+    background-color: chartreuse;
+    width: 100px;
+    padding: 50px;
+    height: 114px;
+
+}
+.top{
+    border-top: 6px solid black;
+    border-left: 6px solid black;
+}
+
+.top-right{
+    border-right: 6px solid black;
+}
+
+
+.mid{
+    border-top: 6px solid black;
+    border-left: 6px solid black;
+}
+.mid-right{
+    border-right: 6px solid black;
+}
+
+
+.low{
+    border-top: 6px solid black;
+    border-left: 6px solid black;
+    border-bottom: 6px solid black;
+}
+
+.low-right{
+    border-right: 6px solid black;
+}
+#clicks{
+    width: 100%;
+    display: block;
+}
