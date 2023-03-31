@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clicks.innerHTML = numberOfClicks;
 
             //todo every odd click should be another color.
+            //hej
 
 
             console.log(numberOfClicks % 2);
