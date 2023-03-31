@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    document.getElementById('winner-container').innerHTML = `<h1></h1>`
     let numberOfClicks = 0;
-
+    let gameCompleted = false;
+    
     let combs = [
         [0, 1, 2],
         [3, 4, 5],
@@ -30,12 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const boxes = document.getElementsByClassName("box");
 
-
+   
+    
     for (let i = 0; i < boxes.length; i++) {
 
         boxes[i].addEventListener("click", function () {
 
-            if (this.classList.contains('not-clickeble')) {
+            if (this.classList.contains('not-clickeble') || gameCompleted == true) {
+
                 return;
             }
 
@@ -54,16 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (numberOfClicks % 2) {
                 this.classList.add('x')
-                this.textContent = 'x';
-                this.style = 'background-color: green';
+                this.textContent = 'X';
+
             } else {
                 this.classList.add('o')
-                this.textContent = 'o';
-                this.style = 'background-color: red';
+                this.textContent = 'O';
+
+            }
+            if (numberOfClicks == 9) {
+                document.getElementById('winner-container').innerHTML = `<h1>DRAW</h1>`
             }
 
             if(checkForWinner(boxes)){
                document.getElementById('winner-container').innerHTML = `<h1>Winner is ${this.textContent}</h1>`
+               gameCompleted = true;
             }
 
         });
@@ -77,12 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
         clicks.innerHTML = numberOfClicks;
         let boxes = document.getElementsByClassName("box");
         for (let i = 0; i < boxes.length; i++) {
-            boxes[i].style.backgroundColor = "chartreuse";
+            boxes[i].style.backgroundColor = "white";
             boxes[i].classList.remove("not-clickeble");
             boxes[i].classList.remove("x");
             boxes[i].classList.remove("o");
+            boxes[i].textContent = '';
+            gameCompleted = false;
+            document.getElementById('winner-container').innerHTML = `<h1></h1>`
         }
 
     });
 })
-
