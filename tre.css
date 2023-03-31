@@ -63,7 +63,7 @@ body{
 
 #completed-game-container{
     position: absolute;
-    _display: none;
+    display: none;
     background: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
@@ -72,11 +72,11 @@ body{
 }
 #completed-game-inner-container {
     position: absolute;
-    top: 40%;
-    left: 45%;
+    top: 35%;
+    left: 35%;
     min-width: 200px;
     min-height: 200px;
-    background-color: white;
+    background-color: whitesmoke;
     text-align: center;
     color: black;
     font-size: 50px;

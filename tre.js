@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('winner-container').innerHTML = `<h1></h1>`
     let numberOfClicks = 0;
     let gameCompleted = false;
-    
+
     let combs = [
         [0, 1, 2],
         [3, 4, 5],
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     }
 
-    let reStart = document.getElementById("reStart")
+    let restartButtons = document.getElementsByClassName("restart-button")
 
     const boxes = document.getElementsByClassName("box");
 
@@ -65,33 +65,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
             if (numberOfClicks == 9) {
-                document.getElementById('winner-container').innerHTML = `<h1>DRAW</h1>`
+                document.getElementById('winnerText').innerHTML = `<h2>DRAW</h2>`
+                gameCompleted = true;
             }
 
             if(checkForWinner(boxes)){
-               document.getElementById('winner-container').innerHTML = `<h1>Winner is ${this.textContent}</h1>`
+               document.getElementById('winnerText').innerHTML = `<h2>Winner is ${this.textContent}</h2>`
                gameCompleted = true;
+            }
+
+            if(gameCompleted == true){
+                const element = document.getElementById('completed-game-container');
+                element.style.display = 'block';
             }
 
         });
     }
 
+    for(let j = 0; j < restartButtons.length; j++){
+        restartButtons[j].addEventListener("click", function () {
+            numberOfClicks = 0;
+            const element = document.getElementById('completed-game-container');
+            element.style.display = 'none';
 
-    reStart.addEventListener("click", function () {
-        numberOfClicks = 0;
 
+            clicks.innerHTML = numberOfClicks;
+            let boxes = document.getElementsByClassName("box");
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.backgroundColor = "white";
+                boxes[i].classList.remove("not-clickeble");
+                boxes[i].classList.remove("x");
+                boxes[i].classList.remove("o");
+                boxes[i].textContent = '';
+                gameCompleted = false;
+                document.getElementById('winner-container').innerHTML = `<h1></h1>`
+            }
 
-        clicks.innerHTML = numberOfClicks;
-        let boxes = document.getElementsByClassName("box");
-        for (let i = 0; i < boxes.length; i++) {
-            boxes[i].style.backgroundColor = "white";
-            boxes[i].classList.remove("not-clickeble");
-            boxes[i].classList.remove("x");
-            boxes[i].classList.remove("o");
-            boxes[i].textContent = '';
-            gameCompleted = false;
-            document.getElementById('winner-container').innerHTML = `<h1></h1>`
-        }
+        });
+    }
 
-    });
+    
 })
