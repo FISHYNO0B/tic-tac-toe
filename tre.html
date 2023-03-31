@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <link rel="stylesheet" href="tre.css">
     <script src="tre.js"></script>
@@ -20,23 +21,19 @@
 <div class="box-container">
 
     <div id="boxes">
-        <div class="box top"></div>
-        <div class="box top"></div>
-        <div class="box top top-right"></div>
+        <div id="box1" class="box top"></div>
+        <div id="box2" class="box top"></div>
+        <div id="box3" class="box top top-right"></div>
 
-        <div class="box mid"></div>
-        <div class="box mid"></div>
-        <div class="box mid mid-right"></div>
+        <div id="box4" class="box mid"></div>
+        <div id="box5"  class="box mid"></div>
+        <div id="box6" class="box mid mid-right"></div>
 
-        <div class="box low"></div>
-        <div class="box low"></div>
-        <div class="box low low-right"></div>
+        <div id="box7"  class="box low"></div>
+        <div id="box8" class="box low"></div>
+        <div id="box9" class="box low low-right"></div>
     </div>
 </div>
-<div id="completed-game-container">
-    <div id="completed-game-inner-container">
-        hello
-    </div>
-</div>
+
 </body>
 </html>

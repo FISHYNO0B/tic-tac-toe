@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tre.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FISHYNO0B/tic-tac-toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FISHYNO0B/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/FISHYNO0B/tic-tac-toe#readme",
+  "dependencies": {
+    "socket.io": "^4.6.1"
+  }
+}
